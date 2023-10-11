@@ -151,16 +151,13 @@ require('lazy').setup({
   },
 
   {
-    -- Theme inspired by Atom
     'folke/tokyonight.nvim',
     lazy = false,
     priority = 1000,
     opts = {
       style = 'moon',
+      transparent = true,
     },
-    config = function()
-      vim.cmd.colorscheme 'tokyonight'
-    end,
   },
 
   {
@@ -276,6 +273,9 @@ vim.o.completeopt = 'menuone,noselect'
 
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
+
+-- Set the colorscheme
+vim.cmd.colorscheme('tokyonight')
 
 -- [[ Basic Keymaps ]]
 
