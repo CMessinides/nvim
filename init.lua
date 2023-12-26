@@ -307,6 +307,16 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
+-- [[ Configure file types ]]
+-- See `:help vim.filetype.add()`
+vim.filetype.add({
+  extension = {
+    mdx = "markdown.mdx",
+  },
+  filename = {},
+  pattern = {},
+})
+
 -- [[ Configure Telescope ]]
 -- See `:help telescope` and `:help telescope.setup()`
 require('telescope').setup {
