@@ -156,7 +156,6 @@ require('lazy').setup({
     priority = 1000,
     opts = {
       style = 'moon',
-      transparent = true,
     },
   },
 
@@ -242,6 +241,11 @@ vim.o.hlsearch = false
 vim.wo.number = true
 -- Use relative numbers
 vim.wo.relativenumber = true
+
+-- Indent with 4 spaces by default
+vim.o.shiftwidth = 4
+vim.o.tabstop = 4
+vim.o.expandtab = true
 
 -- Enable mouse mode
 vim.o.mouse = 'a'
@@ -498,10 +502,10 @@ require('mason-lspconfig').setup()
 --  define the property 'filetypes' to the map in question.
 local servers = {
   -- clangd = {},
-  -- gopls = {},
+  gopls = {},
   -- pyright = {},
   -- rust_analyzer = {},
-  -- tsserver = {},
+  tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
 
   lua_ls = {
