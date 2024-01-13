@@ -4,7 +4,13 @@ return {
         -- Optional dependencies
         dependencies = { "nvim-tree/nvim-web-devicons" },
         config = function ()
-            require('oil').setup({})
+            require('oil').setup({
+                view_options = {
+                    is_always_hidden = function (name, bufnr)
+                        return name == ".."
+                    end
+                },
+            })
 
             vim.keymap.set('n', '<leader>.', '<cmd>Oil<cr>', { silent = true, desc = "Open parent directory" })
             vim.keymap.set(
